@@ -1,3 +1,5 @@
+package de.jacobs;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.Panel;
@@ -17,7 +19,7 @@ import javax.swing.JTextField;
 public class TRView extends JFrame {
 
 	/**
-	 * Datenfeld des Taschenrechner Klasse TRView
+	 * Datenfeld des Taschenrechner Klasse de.jacobs.TRView
 	 * Erstellung eines Displays
 	 */
 	private JTextField display = new JTextField();

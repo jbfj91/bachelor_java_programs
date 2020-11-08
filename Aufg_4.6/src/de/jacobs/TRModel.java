@@ -1,3 +1,4 @@
+package de.jacobs;
 
 /**
  * Hält und bestimmt über die für den Taschenrechner relevanten Daten.
@@ -8,7 +9,7 @@
 public class TRModel {
 
 	/**
-	 * Datenfeld der Klasse TRModel
+	 * Datenfeld der Klasse de.jacobs.TRModel
 	 */
 	private String result;
 	private String operator;
