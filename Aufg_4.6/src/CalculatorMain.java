@@ -1,4 +1,4 @@
-public class main_4_6 {
+public class CalculatorMain {
 	
    /**
     * Loesung zur Aufgabe 4.6
