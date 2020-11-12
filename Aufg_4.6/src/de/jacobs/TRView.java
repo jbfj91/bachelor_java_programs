@@ -1,14 +1,9 @@
 package de.jacobs;
 
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.Panel;
-import java.util.LinkedList;
-import java.util.List;
+import java.awt.*;
+import javax.swing.*;
+import java.util.Vector;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JTextField;
 
 /**
  * Stellt die Oberfläche eines Taschenrechners mit Eingabe- und Darstellungsmöglichkeiten.
@@ -33,24 +28,24 @@ public class TRView extends JFrame {
 	 * abgelegt werden Die Tasten werden in diesem Programm ueber den
 	 * entsprechenden Index angesprochen.
 	 */
-	public List<JButton> buttons = new LinkedList<JButton>();
+	public Vector<JButton> buttons = new Vector<>();
 	{
-		buttons.add(new JButton("0")); // Index 0
-		buttons.add(new JButton("1")); // Index 1
-		buttons.add(new JButton("2")); // Index 2
-		buttons.add(new JButton("3")); // Index 3
-		buttons.add(new JButton("4")); // Index 4
-		buttons.add(new JButton("5")); // Index 5
-		buttons.add(new JButton("6")); // Index 6
-		buttons.add(new JButton("7")); // Index 7
-		buttons.add(new JButton("8")); // Index 8
-		buttons.add(new JButton("9")); // Index 9
-		buttons.add(new JButton("+")); // Index 10
-		buttons.add(new JButton("-")); // Index 11
-		buttons.add(new JButton("*")); // Index 12
-		buttons.add(new JButton("/")); // Index 13
-		buttons.add(new JButton("=")); // Index 14
-		buttons.add(new JButton("C")); // Index 15
+		buttons.add(new JButton ("0")); // Index 0
+		buttons.add(new JButton ("1")); // Index 1
+		buttons.add(new JButton ("2")); // Index 2
+		buttons.add(new JButton ("3")); // Index 3
+		buttons.add(new JButton ("4")); // Index 4
+		buttons.add(new JButton ("5")); // Index 5
+		buttons.add(new JButton ("6")); // Index 6
+		buttons.add(new JButton ("7")); // Index 7
+		buttons.add(new JButton ("8")); // Index 8
+		buttons.add(new JButton ("9")); // Index 9
+		buttons.add(new JButton ("+")); // Index 10
+		buttons.add(new JButton ("-")); // Index 11
+		buttons.add(new JButton ("*")); // Index 12
+		buttons.add(new JButton ("/")); // Index 13
+		buttons.add(new JButton ("=")); // Index 14
+		buttons.add(new JButton ("C")); // Index 15
 	}
 
 	/*
@@ -119,7 +114,6 @@ public class TRView extends JFrame {
 	 String operator = model.getOperator();
 	 String operand = model.getOperand(); 
 	 String error = (model.getError().equals("") ? "" : (model.getError() + "!!!"));
-	 
 	 display.setText(result + operator + operand + error); 
 	 }
 }

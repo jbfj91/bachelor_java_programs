@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 /**
  * Steuerung des Taschernrechner Views und Models.
  * @author jacob
- * (code aus unit 7 skript) 
  * @version 1.0
  */
 public class TRControl implements ActionListener {

@@ -11,17 +11,17 @@ public class TRModel {
 	/**
 	 * Datenfeld der Klasse de.jacobs.TRModel
 	 */
-	private String result;
-	private String operator;
-	private String operand;
-	private String error;
+	private String result = "";
+	private String operator = "";
+	private String operand = "";
+	private String error = "";
 	
 	
 	
 	
 	/**
 	 * Fuehrt Berechnungen (Addition, Subtraktion, Division, Multiplikation) 
-	 * mit eingegebenen operatoren und results durch.
+	 * mit eingegebenen Operatoren und results durch.
 	 * Faengt Leereingaben und durch null teilen ab.
 	 * Am Schluss werden alle Datenfelder zurückgesetzt 
 	 */
