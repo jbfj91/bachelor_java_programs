@@ -1,34 +1,29 @@
 package de.jacobs;
 
-import java.awt.*;
 import javax.swing.*;
-import java.util.Vector;
+import java.awt.*;
+import java.util.LinkedList;
+import java.util.List;
 
 
 /**
  * Stellt die Oberfläche eines Taschenrechners mit Eingabe- und Darstellungsmöglichkeiten.
  * @author jacob
- * (code aus unit 7 skript)
- *	@version 1.0
+ * @version 1.1
  */
 public class TRView extends JFrame {
 
 	/**
-	 * Datenfeld des Taschenrechner Klasse de.jacobs.TRView
-	 * Erstellung eines Displays
+	 * Datenfeld des Taschenrechner-Views zur Darstellung des Displays
 	 */
-	private JTextField display = new JTextField();
-	{
-		this.display.setEditable(false);
-		this.display.setSize(200, 60);
-	}
+	private final JTextField display = new JTextField();
 
 	/*
 	 * Datenfeld in Form einer Liste in dem alle Tasten des Taschenrechners
-	 * abgelegt werden Die Tasten werden in diesem Programm ueber den
+	 * abgelegt werden. Die Tasten werden in diesem Programm ueber den
 	 * entsprechenden Index angesprochen.
 	 */
-	public Vector<JButton> buttons = new Vector<>();
+	private final List<JButton> buttons = new LinkedList<>();
 	{
 		buttons.add(new JButton ("0")); // Index 0
 		buttons.add(new JButton ("1")); // Index 1
@@ -48,6 +43,10 @@ public class TRView extends JFrame {
 		buttons.add(new JButton ("C")); // Index 15
 	}
 
+	public List<JButton> getButtons() {
+		return buttons;
+	}
+
 	/*
 	 * Datenfelder des Views die auf das Modelobjekt und Controllerobjekt des TR
 	 * verweisen
@@ -63,8 +62,13 @@ public class TRView extends JFrame {
 	 * Controller
 	 **/
 	public TRView() {
+
 		super("Taschenrechner");
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+		//Initialisierung des Displays
+		this.display.setEditable(false);
+		this.display.setSize(200, 60);
 
 		Panel tastenpanel = new Panel();
 		GridLayout gbLayout = new GridLayout(4, 4);

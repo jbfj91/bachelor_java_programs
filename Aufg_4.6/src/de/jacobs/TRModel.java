@@ -3,8 +3,7 @@ package de.jacobs;
 /**
  * Hält und bestimmt über die für den Taschenrechner relevanten Daten.
  * @author jacob
- * (code aus unit 7 skript) 
- * @version 1.0
+ * @version 1.1
  */
 public class TRModel {
 
@@ -32,8 +31,8 @@ public class TRModel {
 				return;
 
 			// Ab hier normale Verarbeitung
-			float a = Float.valueOf(this.result);
-			float b = Float.valueOf(this.operand);
+			float a = Float.parseFloat(this.result);
+			float b = Float.parseFloat(this.operand);
 
 			if (this.operator.equals("+"))
 				this.result = String.valueOf(a + b);
@@ -42,7 +41,7 @@ public class TRModel {
 			if (this.operator.equals("/")) {
 				// Nicht durch Null teilen
 				if (b == 0.0)
-					throw new Exception("Division by Zero");
+					throw new ArithmeticException("Division by Zero");
 				this.result = String.valueOf(a / b);
 			}
 			if (this.operator.equals("*"))

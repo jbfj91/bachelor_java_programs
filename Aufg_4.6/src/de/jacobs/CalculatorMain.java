@@ -3,7 +3,8 @@ package de.jacobs;
 public class CalculatorMain {
 
     /**
-     * Loesung zur Aufgabe 4.6
+     * Zum Start des Taschenrechner Programms
+     * @author jacob
      */
     public static void main(String[] args) {
         TRView tr = new TRView();
