@@ -1,4 +1,4 @@
-package de.jacobs;
+package de.jacobs.calculator;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,23 +6,23 @@ import java.awt.event.ActionListener;
 /**
  * Steuerung des Taschenrechner Views und Models.
  * @author jacob
- * @version 1.1
+ * @version 1.2
  */
 
-public class TRControl implements ActionListener {
+public class CalculatorControl implements ActionListener {
 
 	/**
 	 * Datenfelder des Controller Objekts des Taschenrechners 
 	 **/
-	private final TRView view;
-	private final TRModel model;
+	private final CalculatorView view;
+	private final CalculatorModel model;
 
 	/**
 	 * Konstruktor zum Anlegen eines Taschenrechner Controller Objekts
 	 * @param v Viewobjekt eines Taschenrechners, dass dieser Controller betreut 
 	 * @param m Modelobjekt eines Taschenrechners, dass dieser Controller betreut 
 	 **/
-	public TRControl (TRView v, TRModel m) { 
+	public CalculatorControl(CalculatorView v, CalculatorModel m) {
 		this.view = v;
 		this.model = m;
 		}
@@ -52,7 +52,6 @@ public class TRControl implements ActionListener {
 
 		if (ev.getSource() == view.getButtons().get(14)) berechnen();			// =
 		if (ev.getSource() == view.getButtons().get(15)) loeschen();				// C
-	
 	}	
 	
 	

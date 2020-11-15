@@ -1,4 +1,4 @@
-package de.jacobs;
+package de.jacobs.calculator;
 
 public class CalculatorMain {
 
@@ -7,7 +7,7 @@ public class CalculatorMain {
      * @author jacob
      */
     public static void main(String[] args) {
-        TRView tr = new TRView();
+        CalculatorView tr = new CalculatorView();
         tr.setSize(300, 300);
         tr.setVisible(true);
         tr.setResizable(false);

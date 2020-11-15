@@ -1,11 +1,11 @@
-package de.jacobs;
+package de.jacobs.calculator;
 
 /**
  * Hält und bestimmt über die für den Taschenrechner relevanten Daten.
  * @author jacob
- * @version 1.1
+ * @version 1.2
  */
-public class TRModel {
+public class CalculatorModel {
 
 	/**
 	 * Datenfeld der Klasse de.jacobs.TRModel
@@ -40,8 +40,9 @@ public class TRModel {
 				this.result = String.valueOf(a - b);
 			if (this.operator.equals("/")) {
 				// Nicht durch Null teilen
-				if (b == 0.0)
+				if (b == 0.0) {
 					throw new ArithmeticException("Division by Zero");
+				}
 				this.result = String.valueOf(a / b);
 			}
 			if (this.operator.equals("*"))
@@ -121,10 +122,6 @@ public class TRModel {
 	
 	/**
 	 * Setzt den internen Zustand eines Taschenrechners zurueck
-	 * result = ""
-	 * operand = ""
-	 * operator = ""
-	 * error = ""
 	 */
 	public void clear() {
 		this.result = "";
