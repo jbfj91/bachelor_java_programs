@@ -7,7 +7,7 @@ import java.util.List;
 
 
 /**
- * Stellt die Oberfläche eines Taschenrechners mit Eingabe- und Darstellungsmöglichkeiten.
+ * Erstellt die Oberfläche des Taschenrechners mit Eingabe- und Darstellungsmöglichkeiten.
  *
  * @author jacob
  * @version 1.2
@@ -20,7 +20,7 @@ public class CalculatorView extends JFrame {
     private final JTextField display = new JTextField();
 
     /*
-     * Datenfeld in Form einer Liste in dem alle Tasten des Taschenrechners
+     * Datenfeld in Form einer Liste in der alle Tasten des Taschenrechners
      * abgelegt werden. Die Tasten werden in diesem Programm ueber den
      * entsprechenden Index angesprochen.
      */

@@ -14,9 +14,7 @@ public class CalculatorModel {
 	private String operator = "";
 	private String operand = "";
 	private String error = "";
-	
-	
-	
+
 	
 	/**
 	 * Fuehrt Berechnungen (Addition, Subtraktion, Division, Multiplikation) 
@@ -77,7 +75,7 @@ public class CalculatorModel {
 
 	/**
 	 * Liefert den aktuell gesetzten Operator zurueck
-	 * @return alktueller Operator
+	 * @return aktueller Operator
 	 */
 	public String getOperator() {
 		return this.operator;

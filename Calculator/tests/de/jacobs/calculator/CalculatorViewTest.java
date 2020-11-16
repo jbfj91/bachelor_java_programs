@@ -11,16 +11,12 @@ import static org.junit.Assert.*;
 public class CalculatorViewTest {
 
     @Test
-    public void getButtons() throws Exception {
+    public void buttonGenerationTest() {
         CalculatorView testView = new CalculatorView();
-
         List<JButton> buttons = testView.getButtons();
 
         assertEquals(16,buttons.size());
-        assertEquals( "0",buttons.get(1).getText());
+        assertEquals("8",buttons.get(8).getText());
     }
 
-    @Test
-    public void update() {
-    }
 }
