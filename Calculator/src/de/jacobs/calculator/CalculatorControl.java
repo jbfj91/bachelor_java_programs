@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 /**
  * Steuerung des Taschenrechner Views und Models.
  * @author jacob
- * @version 1.2
+ * @version 1.3
  */
 
 public class CalculatorControl implements ActionListener {
@@ -34,24 +34,24 @@ public class CalculatorControl implements ActionListener {
 	 * betaetigt wurde.
 	 **/
 	public void actionPerformed(ActionEvent ev) {
-		if (ev.getSource() == view.getButtons().get(0)) zahlAnhaengen("0");  // 0
-		if (ev.getSource() == view.getButtons().get(1)) zahlAnhaengen("1");  // 1
-		if (ev.getSource() == view.getButtons().get(2)) zahlAnhaengen("2");  // 2
-		if (ev.getSource() == view.getButtons().get(3)) zahlAnhaengen("3");  // 3
-		if (ev.getSource() == view.getButtons().get(4)) zahlAnhaengen("4");  // 4
-		if (ev.getSource() == view.getButtons().get(5)) zahlAnhaengen("5");  // 5
-		if (ev.getSource() == view.getButtons().get(6)) zahlAnhaengen("6");  // 6
-		if (ev.getSource() == view.getButtons().get(7)) zahlAnhaengen("7");  // 7
-		if (ev.getSource() == view.getButtons().get(8)) zahlAnhaengen("8");  // 8
-		if (ev.getSource() == view.getButtons().get(9)) zahlAnhaengen("9");  // 9
+		if (ev.getSource() == view.getButtons().get(0)) adNumber("0");  // 0
+		if (ev.getSource() == view.getButtons().get(1)) adNumber("1");  // 1
+		if (ev.getSource() == view.getButtons().get(2)) adNumber("2");  // 2
+		if (ev.getSource() == view.getButtons().get(3)) adNumber("3");  // 3
+		if (ev.getSource() == view.getButtons().get(4)) adNumber("4");  // 4
+		if (ev.getSource() == view.getButtons().get(5)) adNumber("5");  // 5
+		if (ev.getSource() == view.getButtons().get(6)) adNumber("6");  // 6
+		if (ev.getSource() == view.getButtons().get(7)) adNumber("7");  // 7
+		if (ev.getSource() == view.getButtons().get(8)) adNumber("8");  // 8
+		if (ev.getSource() == view.getButtons().get(9)) adNumber("9");  // 9
 
-		if (ev.getSource() == view.getButtons().get(10)) setRechenzeichen("+"); // Plus
-		if (ev.getSource() == view.getButtons().get(11)) setRechenzeichen("-"); // Minus
-		if (ev.getSource() == view.getButtons().get(12)) setRechenzeichen("*"); // Mal
-		if (ev.getSource() == view.getButtons().get(13)) setRechenzeichen("/"); // Geteilt
+		if (ev.getSource() == view.getButtons().get(10)) setOperator("+"); // Plus
+		if (ev.getSource() == view.getButtons().get(11)) setOperator("-"); // Minus
+		if (ev.getSource() == view.getButtons().get(12)) setOperator("*"); // Mal
+		if (ev.getSource() == view.getButtons().get(13)) setOperator("/"); // Geteilt
 
-		if (ev.getSource() == view.getButtons().get(14)) berechnen();			// =
-		if (ev.getSource() == view.getButtons().get(15)) loeschen();				// C
+		if (ev.getSource() == view.getButtons().get(14)) startCalculation();			// =
+		if (ev.getSource() == view.getButtons().get(15)) startToClear();				// C
 	}	
 	
 	
@@ -60,7 +60,7 @@ public class CalculatorControl implements ActionListener {
 	* Diese Zahl wird der aktuell auf dem Display stehenden Zahl angehaengt
 	* @param i Die Ziffer die an den aktuell eingegebenen Operanden angehaengt werden soll
 	**/
-	private void zahlAnhaengen (String i) { 
+	private void adNumber(String i) {
 		model.setOperand(model.getOperand() + i); 
 		view.update();
 	}
@@ -69,7 +69,7 @@ public class CalculatorControl implements ActionListener {
 	* Wird aufgerufen, wenn eine Operatoraste, -, /, *) betaetigt wurde 
 	* @param i Der eingegebene Operator (+, -, /, *)
 	**/
-	private void setRechenzeichen (String i) { 
+	private void setOperator(String i) {
 		model.setOperator(i);
 		view.update();
 	}
@@ -78,8 +78,8 @@ public class CalculatorControl implements ActionListener {
 	/**
 	* Wird aufgerufen, wenn die = Taste auf einem Taschenrechner betaetigt wurde. 
 	**/
-	private void berechnen() { 
-		model.berechne(); 
+	private void startCalculation() {
+		model.calculate();
 		view.update();
 	}
 	
@@ -88,7 +88,7 @@ public class CalculatorControl implements ActionListener {
 	* Wird aufgerufen, wenn die C Taste auf einem Taschenrechner
 	* betaetigt wurde.
 	**/
-	private void loeschen() { 
+	private void startToClear() {
 		model.clear(); 
 		view.update();
 	}

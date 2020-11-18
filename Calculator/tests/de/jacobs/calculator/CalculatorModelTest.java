@@ -14,7 +14,7 @@ public class CalculatorModelTest {
         testModel.setOperator("+");
         testModel.setOperand("2");
 
-        testModel.berechne();
+        testModel.calculate();
         assertEquals( "4.0", testModel.getResult());
     }
 
@@ -26,7 +26,7 @@ public class CalculatorModelTest {
         testModel.setOperator("-");
         testModel.setOperand("2");
 
-        testModel.berechne();
+        testModel.calculate();
         assertEquals( "2.0", testModel.getResult());
     }
 
@@ -38,7 +38,7 @@ public class CalculatorModelTest {
         testModel.setOperator("*");
         testModel.setOperand("2");
 
-        testModel.berechne();
+        testModel.calculate();
         assertEquals( "4.0", testModel.getResult());
     }
 
@@ -50,7 +50,7 @@ public class CalculatorModelTest {
         testModel.setOperator("/");
         testModel.setOperand("2");
 
-        testModel.berechne();
+        testModel.calculate();
         assertEquals( "2.5", testModel.getResult());
     }
 
@@ -62,7 +62,7 @@ public class CalculatorModelTest {
         testModel.setOperator("/");
         testModel.setOperand("0");
 
-        testModel.berechne();
+        testModel.calculate();
         assertEquals( "Division by Zero", testModel.getError());
 
     }

@@ -3,7 +3,7 @@ package de.jacobs.calculator;
 /**
  * Hält und bestimmt über die für den Taschenrechner relevanten Daten.
  * @author jacob
- * @version 1.2
+ * @version 1.3
  */
 public class CalculatorModel {
 
@@ -22,7 +22,7 @@ public class CalculatorModel {
 	 * Faengt Leereingaben und durch null teilen ab.
 	 * Am Schluss werden alle Datenfelder zurückgesetzt 
 	 */
-	public void berechne() {
+	public void calculate() {
 		try {
 			// Resultat, Operator oder Operand liegen nicht vor => tue nichts
 			if (this.result.equals("") || this.operator.equals("") || this.operand.equals(""))
@@ -93,7 +93,7 @@ public class CalculatorModel {
 		if (!(this.result.equals("") && this.operator.equals("") && 
 				this.operand.equals(""))) 
 		{
-			this.berechne();
+			this.calculate();
 		if (!this.getError().equals("")) return;
 		// Wenn Fehler aufgetreten, Methode verlassen
 		}

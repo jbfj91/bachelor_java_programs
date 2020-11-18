@@ -10,7 +10,7 @@ import java.util.List;
  * Erstellt die Oberfläche des Taschenrechners mit Eingabe- und Darstellungsmöglichkeiten.
  *
  * @author jacob
- * @version 1.2
+ * @version 1.3
  */
 public class CalculatorView extends JFrame {
 
@@ -52,11 +52,11 @@ public class CalculatorView extends JFrame {
         this.display.setEditable(false);
         this.display.setSize(200, 60);
 
-        Panel tastenpanel = new Panel();
+        Panel buttonPanel = new Panel();
         GridLayout gbLayout = new GridLayout(4, 4);
         gbLayout.setHgap(5);
         gbLayout.setVgap(5);
-        tastenpanel.setLayout(gbLayout);
+        buttonPanel.setLayout(gbLayout);
 
         //Initizialisierung der Buttons
         buttons.add(new JButton("0")); // Index 0
@@ -78,33 +78,33 @@ public class CalculatorView extends JFrame {
 
 
         // Zeile 1 des Bedienpanels des TR wird angelegt
-        tastenpanel.add(this.buttons.get(1));
-        tastenpanel.add(this.buttons.get(2));
-        tastenpanel.add(this.buttons.get(3));
-        tastenpanel.add(this.buttons.get(10));
+        buttonPanel.add(this.buttons.get(1));
+        buttonPanel.add(this.buttons.get(2));
+        buttonPanel.add(this.buttons.get(3));
+        buttonPanel.add(this.buttons.get(10));
 
         // Zeile 2 des Bedienpanels des TR wird angelegt
-        tastenpanel.add(this.buttons.get(4));
-        tastenpanel.add(this.buttons.get(5));
-        tastenpanel.add(this.buttons.get(6));
-        tastenpanel.add(this.buttons.get(11)); // Minus
+        buttonPanel.add(this.buttons.get(4));
+        buttonPanel.add(this.buttons.get(5));
+        buttonPanel.add(this.buttons.get(6));
+        buttonPanel.add(this.buttons.get(11)); // Minus
 
         // Zeile 3 des Bedienpanels des TR wird angelegt
-        tastenpanel.add(this.buttons.get(7));
-        tastenpanel.add(this.buttons.get(8));
-        tastenpanel.add(this.buttons.get(9));
-        tastenpanel.add(this.buttons.get(12)); // Mal
+        buttonPanel.add(this.buttons.get(7));
+        buttonPanel.add(this.buttons.get(8));
+        buttonPanel.add(this.buttons.get(9));
+        buttonPanel.add(this.buttons.get(12)); // Mal
 
         // Zeile 4 des Bedienpanels des TR wird angelegt
-        tastenpanel.add(this.buttons.get(15));
-        tastenpanel.add(this.buttons.get(0));
-        tastenpanel.add(this.buttons.get(14));
-        tastenpanel.add(this.buttons.get(13));
+        buttonPanel.add(this.buttons.get(15));
+        buttonPanel.add(this.buttons.get(0));
+        buttonPanel.add(this.buttons.get(14));
+        buttonPanel.add(this.buttons.get(13));
 
         // Display des TR in die erste Zeile setzen. Das Bedienpanel direkt
         // darunter
         this.add(display, BorderLayout.NORTH);
-        this.add(tastenpanel, BorderLayout.CENTER);
+        this.add(buttonPanel, BorderLayout.CENTER);
 
         // Alle Tasten des Rechners mit dem Controllerobjekt verknuepfen
         for (JButton b : buttons) b.addActionListener(controller);
