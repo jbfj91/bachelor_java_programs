@@ -2,3 +2,5 @@
 out
 .idea
 bachelor_java_programs.iml
+.gradle/
+build/
